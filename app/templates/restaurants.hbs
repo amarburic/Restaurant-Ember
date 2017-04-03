@@ -1,0 +1,21 @@
+<div class="restaurants">
+	{{#search-bar}}
+	<div class = "results">
+		<div class="row">
+		{{#each model as |restaurantUnit index|}}	
+			{{#if (is-within-range index resultsPerPage currentPage)}}
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					{{restaurant-listing restaurant=restaurantUnit}} 
+				</div>
+			{{/if}}
+		{{/each}}
+		</div>
+		<div class="results-page-links">
+			{{#each (generate-links 10) as |element|}}
+				<button {{action "jumpToPage" element.value}}>{{element.value}}</button>
+			{{/each}}
+		</div>
+	</div>
+	{{/search-bar}}
+</div>
+{{outlet}}

@@ -1,0 +1,28 @@
+<div class="restaurant-listing">
+	<img src={{{restaurant.image}}}/>
+	<div class="restaurant-name">
+		
+			{{restaurant.label}} 
+		
+	</div>
+	<div class="rating">
+		<span class="star">
+			{{{star-rating restaurant.rating}}}
+		</span>	
+		<span class="n-of-ratings">
+			({{restaurant.nOfRatings}})
+		</span>
+		<span class="dollar">
+			{{{dollar-rating 3}}}
+		</span>
+	</div>
+	<hr align="left">
+	<div class = "tags">
+		{{restaurant.tags.0.name}} |
+		{{restaurant.tags.1.name}} |
+		{{restaurant.tags.2.name}}	
+	</div>
+	<button class="btn btn-default" type="button" style="width:100%;">Button</button>
+</div>
+
+{{yield}}
